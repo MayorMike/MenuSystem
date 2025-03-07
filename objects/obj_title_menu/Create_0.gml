@@ -22,4 +22,8 @@ option[1, 3] = "Back";
 
 op_length = 0;
 menu_level = 0;
-//Blank Comment
+
+//Declare keyboard variables
+up_key = keyboard_check_pressed(vk_up);
+down_key = keyboard_check_pressed(vk_down);
+accept_key = keyboard_check_pressed(vk_space);
