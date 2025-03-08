@@ -1,7 +1,7 @@
 //Get inputs
 up_key = keyboard_check_pressed(vk_up);
 down_key = keyboard_check_pressed(vk_down);
-accept_key = keyboard_check_pressed(vk_space);
+accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
 
 //Store Number of Options in Current Menu
 op_length = array_length(option[menu_level]);
@@ -22,13 +22,14 @@ if accept_key  {
 		switch(pos)
 		{
 			//Start Game
-			case 0: room_goto_next(); break;
+			case 0: menu_level = 3; break;
 			//Settings
 			case 1: menu_level = 1; break;
 			//Quit Game	
-			case 2: game_end(); break;
+			case 2: menu_level = 2; break;
 		}
 		break;
+		
 		//Settings
 		case 1:
 			switch(pos) {
@@ -41,10 +42,31 @@ if accept_key  {
 				//Back
 				case 3: menu_level = 0; break;
 		}
+		break;
+		
+		//Quit Game - Yes or no?
+		case 2:
+			switch(pos) {
+				//Yes
+				case 0: game_end();
+				//No
+				case 1: menu_level = 0; break;
+			}
+			break;
+			
+		//Start Game - Yes or No?
+		case 3:
+			switch(pos) {
+				//Yes
+				case 0: room_goto_next(); break;
+				//No
+				case 1: menu_level = 0; break;
+			}
+			break;
 	}
 		
 	//Set POsition Back	
 	if _sml != menu_level {pos = 0};
-	//Correct Otpion Length
+	//Correct Option Length
 	op_length = array_length(option[menu_level]);
 }
