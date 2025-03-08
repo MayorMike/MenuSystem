@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_floor",
+  "%Name":"obj_wall",
   "eventList":[],
   "managed":true,
-  "name":"obj_floor",
+  "name":"obj_wall",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_floor1",
-    "path":"sprites/spr_floor1/spr_floor1.yy",
+    "name":"spr_wall",
+    "path":"sprites/spr_wall/spr_wall.yy",
   },
   "spriteMaskId":null,
   "visible":true,
