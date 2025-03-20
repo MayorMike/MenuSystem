@@ -11,9 +11,8 @@ height = op_border * 2 + string_height(option[menu_level][0]) + (op_length - 1) 
 x = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2 - width / 2;
 y = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2 - height / 2;
 
-// Draw menu background
-//draw_set_color(c_black);
-//draw_rectangle(x, y, x + width, y + height, false);
+// Draw menu background using spr_menu, stretched to fit the menu size
+draw_sprite_ext(spr_menu, 0, x, y, width / sprite_width, height / sprite_height, 0, c_white, 1);
 
 // Draw menu options
 draw_set_font(global.font_main);
